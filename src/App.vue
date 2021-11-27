@@ -1,6 +1,6 @@
 <template>
   <div class="parent">
-    <user-age></user-age>
+    <user-age :users="age"></user-age>
   </div>
 </template>
 
@@ -8,11 +8,14 @@
 import UserAge from "./components/UserAge.vue";
 export default {
   name: "App",
-  components: [
-    {
-      UserAge,
-    },
-  ],
+  components: {
+    UserAge,
+  },
+  data() {
+    return {
+      age: 20,
+    };
+  },
 };
 </script>
 
