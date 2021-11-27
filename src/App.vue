@@ -1,7 +1,9 @@
 <template>
   <div>
-    <hello-world></hello-world>
-    <age :ge="age"></age>
+    <hello-world :age="age"></hello-world>
+    <age :age="age" @increment-age="incrementAge"></age>
+    <button @click="age++">plus</button>
+    <button @click="age--">minus</button>
   </div>
 </template>
 
@@ -14,8 +16,13 @@ export default {
   name: "App",
   data() {
     return {
-      age: 20,
+      age: 21,
     };
+  },
+  methods: {
+    incrementAge() {
+      this.age++;
+    },
   },
 };
 </script>
