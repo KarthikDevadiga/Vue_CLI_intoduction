@@ -1,6 +1,7 @@
 <template>
   <div class="parent">
     <user-age :users="age"></user-age>
+    <button @click="increment">increment</button>
   </div>
 </template>
 
@@ -15,6 +16,11 @@ export default {
     return {
       age: 20,
     };
+  },
+  methods: {
+    increment() {
+      this.age += 5;
+    },
   },
 };
 </script>
